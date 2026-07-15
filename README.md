@@ -158,6 +158,8 @@ SAGE University, Bhopal
 
 GitHub: https://github.com/krish24coder
 
+### Developed as part of the **1M1B  Green Skills and Applied AI Internship Innovation Journey Program**
+
 ---
 
 ⭐ If you found this project useful, don't forget to **Star** the repository!
