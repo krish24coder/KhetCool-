@@ -1,165 +1,54 @@
-# KhetCool-
+# KhetCool — Solar Cold-Storage-as-a-Service
 
-# 🌾 KhetCool
+Interactive React web app: project overview, an SMS/IVR-style booking flow simulation, and an impact dashboard (Pilot → Expansion → Full-scale).
 
-KhetCool is a full-featured web application that demonstrates a **pay-per-use solar cold storage solution** for smallholder farmers. The platform simulates an SMS/IVR booking system, provides interactive dashboards, and highlights the impact of affordable cold storage in reducing post-harvest losses.
+## Tech stack
+- React 18 + Vite 5
+- Recharts (charts)
+- lucide-react (icons)
+- Plain CSS-in-JS (no Tailwind build step required)
 
----
-
-## 🚀 Problem Statement
-
-Over **86% of farmers** are smallholders who often lack access to affordable cold storage facilities. As a result, **15–30% of harvested crops are lost** due to spoilage before reaching the market.
-
-KhetCool aims to solve this problem by providing an easy-to-use digital platform for booking shared solar-powered cold storage units.
-
----
-
-## ✨ Features
-
-- 📊 Interactive project overview dashboard
-- 📱 Simulated SMS/IVR booking workflow
-- 🧺 Crop and quantity selection
-- 🏢 Cold storage unit availability tracker
-- 📈 Live impact statistics
-- 🌱 Farmer-friendly user interface
-- ⚡ Responsive and modern design
-
----
-
-## 🛠️ Tech Stack
-
-- React.js
-- JavaScript (JSX)
-- HTML5
-- CSS3
-- Responsive UI Components
-
----
-
-## 📂 Project Structure
-
-```
-KhetCool/
-│
-├── KhetCool_WebApp.jsx
-├── README.md
-└── Assets/
-```
-
----
-
-## 📸 Modules
-
-### 1. Overview
-- Problem Statement
-- Solution
-- Target Users
-- Live Unit Availability
-
-### 2. Book a Slot
-- Choose Storage Unit
-- Select Crop
-- Enter Quantity
-- Choose Duration
-- Booking Confirmation
-
-### 3. Impact Dashboard
-- Farmers Served
-- Crops Saved
-- Storage Utilization
-- Estimated Reduction in Food Waste
-
----
-
-## 🎯 Objectives
-
-- Reduce post-harvest crop losses
-- Improve farmer income
-- Increase access to affordable cold storage
-- Promote sustainable solar-powered infrastructure
-
----
-
-## 💡 Future Enhancements
-
-- Real SMS & IVR integration
-- Farmer authentication
-- Online payment gateway
-- GPS-based nearest cold storage search
-- Weather API integration
-- AI-based crop storage recommendations
-- Multi-language support
-
----
-
-## ▶️ Getting Started
-
-1. Clone the repository
-
-```bash
-git clone https://github.com/krish24coder/KhetCool.git
-```
-
-2. Open the project
-
-```bash
-cd KhetCool
-```
-
-3. Install dependencies
-
+## Run locally
 ```bash
 npm install
+npm run dev
 ```
+Then open the printed local URL (usually http://localhost:5173).
 
-4. Run the application
-
+## Build for production
 ```bash
-npm start
+npm run build
+npm run preview   # optional: preview the production build locally
 ```
+Output goes to the `dist/` folder.
 
----
+## Deploy to Vercel
 
-## 📷 Preview
+**Option A — Vercel CLI**
+```bash
+npm i -g vercel
+vercel
+```
+Follow the prompts (defaults work — Vercel auto-detects Vite from `vercel.json`).
 
-The application includes:
+**Option B — Vercel dashboard**
+1. Push this folder to a GitHub repo.
+2. Go to https://vercel.com/new and import the repo.
+3. Framework preset: **Vite** (auto-detected). Build command `npm run build`, output directory `dist` (already set in `vercel.json`).
+4. Click Deploy.
 
-- Interactive Dashboard
-- Booking Flow
-- Live Storage Counter
-- Farmer-Centric UI
+No environment variables are required — the app uses mock/demo data defined in `src/App.jsx`.
 
----
-
-## 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is created for educational, innovation, and demonstration purposes.
-
----
-
-## 👨‍💻 Author
-
-**Kushagra Sharma**
-
-BCA (AI & Data Science) Student  
-SAGE University, Bhopal
-
-GitHub: https://github.com/krish24coder
-
-### Developed as part of the **1M1B  Green Skills and Applied AI Internship Innovation Journey Program**
-
----
-
-⭐ If you found this project useful, don't forget to **Star** the repository!
+## Project structure
+```
+khetcool-app/
+├── index.html
+├── package.json
+├── vite.config.js
+├── vercel.json
+├── src/
+│   ├── main.jsx
+│   ├── App.jsx      # main app component (all views: Overview, Book, Dashboard)
+│   └── index.css
+└── README.md
+```
