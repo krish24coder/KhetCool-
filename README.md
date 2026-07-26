@@ -2,6 +2,10 @@
 
 Interactive React web app: project overview, an SMS/IVR-style booking flow simulation, and an impact dashboard (Pilot → Expansion → Full-scale).
 
+
+https://github.com/user-attachments/assets/22bf9904-b45a-4a24-b623-0ff8cae422bb
+
+
 ## Tech stack
 - React 18 + Vite 5
 - Recharts (charts)
