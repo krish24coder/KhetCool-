@@ -1,6 +1,6 @@
 # KhetCool — Solar Cold-Storage-as-a-Service
 
-Interactive React web app: project overview, an SMS/IVR-style booking flow simulation, and an impact dashboard (Pilot → Expansion → Full-scale). Bookings are saved to a real database and trigger an email notification.
+KhetCool is an interactive React web app for a decentralized network of solar-powered, pay-per-use cold storage units for smallholder farmers — it includes a project overview, an SMS/IVR-style booking flow simulation that saves real bookings to a Supabase (Postgres) database and triggers an automatic email notification via EmailJS on every confirmed booking, and an impact dashboard showing projected metrics across Pilot, Expansion, and Full-scale phases.
 
 https://github.com/user-attachments/assets/1ad806c9-012b-4a25-ba65-613f7b7d016c
 
@@ -52,10 +52,10 @@ The app falls back to mock data automatically if this isn't set up. To make book
 2. Open **SQL Editor → New query**, paste the contents of `sql/schema.sql`, and click **Run**. This creates the `units` and `bookings` tables, seeds 4 demo units, sets permissions, and adds a trigger that auto-updates a unit's utilization whenever a booking is made.
 3. Go to **Settings → API** and copy your **Project URL** and **anon / public** key.
 4. Add these as environment variables (locally in `.env`, and on Vercel under Settings → Environment Variables):
-
-VITE_SUPABASE_URL=https://your-project-ref.supabase.co
-VITE_SUPABASE_ANON_KEY=your-anon-public-key
-
+   ```
+   VITE_SUPABASE_URL=https://your-project-ref.supabase.co
+   VITE_SUPABASE_ANON_KEY=your-anon-public-key
+   ```
 5. Redeploy (or restart `npm run dev` locally).
 
 Once configured, the Book a Slot page shows a green **"Live database connected"** badge instead of the amber **"Demo mode"** one, and the Impact Dashboard shows a real count of bookings recorded.
@@ -70,28 +70,31 @@ Uses [EmailJS](https://www.emailjs.com) — sends straight from the browser, no 
    - **To email**: `kushagrapawansharma240@gmail.com`
    - **Subject**: `New KhetCool booking — {{booking_code}}`
    - **Content**:
- New booking received.
+     ```
+     New booking received.
 
- Code: {{booking_code}}
- Unit: {{unit_id}} — {{village}}, {{district}}
- Crop: {{crop}}
- Quantity: {{qty_tonnes}} tonne(s)
- Duration: {{days}} day(s)
- Cost: ₹{{cost_inr}}
- Booked at: {{booked_at}}
+     Code: {{booking_code}}
+     Unit: {{unit_id}} — {{village}}, {{district}}
+     Crop: {{crop}}
+     Quantity: {{qty_tonnes}} tonne(s)
+     Duration: {{days}} day(s)
+     Cost: ₹{{cost_inr}}
+     Booked at: {{booked_at}}
+     ```
    - Note the **Template ID**.
 4. **Account → General** → copy your **Public Key**.
 5. Add these as environment variables (locally in `.env`, and on Vercel):
-
-VITE_EMAILJS_SERVICE_ID=your-service-id
-VITE_EMAILJS_TEMPLATE_ID=your-template-id
-VITE_EMAILJS_PUBLIC_KEY=your-public-key
-
+   ```
+   VITE_EMAILJS_SERVICE_ID=your-service-id
+   VITE_EMAILJS_TEMPLATE_ID=your-template-id
+   VITE_EMAILJS_PUBLIC_KEY=your-public-key
+   ```
 6. Redeploy.
 
 Once set up, every confirmed booking emails `kushagrapawansharma240@gmail.com` automatically, and the confirmation box shows "· email sent" next to the booking code.
 
 ## Project structure
+```
 khetcool-app/
 ├── index.html
 ├── package.json
@@ -99,12 +102,13 @@ khetcool-app/
 ├── vercel.json
 ├── .env.example
 ├── src/
-│ ├── main.jsx
-│ ├── App.jsx # main app component (all views: Overview, Book, Dashboard)
-│ ├── index.css
-│ └── lib/
-│ ├── supabaseClient.js
-│ └── emailClient.js
+│   ├── main.jsx
+│   ├── App.jsx              # main app component (all views: Overview, Book, Dashboard)
+│   ├── index.css
+│   └── lib/
+│       ├── supabaseClient.js
+│       └── emailClient.js
 ├── sql/
-│ └── schema.sql # run this in Supabase's SQL Editor
+│   └── schema.sql            # run this in Supabase's SQL Editor
 └── README.md
+```
