@@ -3,7 +3,7 @@
 Interactive React web app: project overview, an SMS/IVR-style booking flow simulation, and an impact dashboard (Pilot → Expansion → Full-scale).
 
 
-https://github.com/user-attachments/assets/22bf9904-b45a-4a24-b623-0ff8cae422bb
+https://github.com/user-attachments/assets/9d984028-bc43-48f5-b815-0f683bcb553f
 
 
 ## Tech stack
