@@ -92,7 +92,6 @@ VITE_EMAILJS_PUBLIC_KEY=your-public-key
 Once set up, every confirmed booking emails `kushagrapawansharma240@gmail.com` automatically, and the confirmation box shows "· email sent" next to the booking code.
 
 ## Project structure
-
 khetcool-app/
 ├── index.html
 ├── package.json
